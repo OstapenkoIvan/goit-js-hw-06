@@ -14,17 +14,25 @@ destroyBtn.addEventListener("click", destroyBoxes);
 function createBoxes(event) {
   boxesContainer.innerHTML = "";
   const generatedNumber = document.querySelector("input").value;
+
+  //test
+  let fragment = new DocumentFragment();
+
   for (let i = 1; i <= generatedNumber; i++) {
     const boxSize = i * 10 + 20 + "px";
 
     const createBox = document.createElement("div");
-    console.log(createBox);
     createBox.style.backgroundColor = getRandomHexColor();
     createBox.style.width = boxSize;
     createBox.style.height = boxSize;
 
-    boxesContainer.append(createBox);
+    // boxesContainer.append(createBox);
+    //test
+    fragment.append(createBox);
   }
+
+  //test
+  boxesContainer.append(fragment);
 }
 
 function destroyBoxes(event) {
