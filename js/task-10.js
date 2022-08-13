@@ -16,7 +16,7 @@ function createBoxes(event) {
   const generatedNumber = document.querySelector("input").value;
 
   //test
-  let fragment = new DocumentFragment();
+  let divsArr = [];
 
   for (let i = 1; i <= generatedNumber; i++) {
     const boxSize = i * 10 + 20 + "px";
@@ -28,11 +28,11 @@ function createBoxes(event) {
 
     // boxesContainer.append(createBox);
     //test
-    fragment.append(createBox);
+    divsArr.push(createBox);
   }
 
   //test
-  boxesContainer.append(fragment);
+  boxesContainer.append(...divsArr);
 }
 
 function destroyBoxes(event) {
