@@ -4,7 +4,10 @@ const dataValue = inputEl.dataset.length;
 inputEl.addEventListener("blur", inputBlur);
 
 function inputBlur(event) {
-  if (event.currentTarget.value.length < dataValue) {
+  if (
+    event.currentTarget.value.length < dataValue ||
+    event.currentTarget.value.length > dataValue
+  ) {
     if (inputEl.classList.contains("valid")) {
       inputEl.classList.remove("valid");
     }
